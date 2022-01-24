@@ -5,26 +5,35 @@ use App\Http\Controllers\jabatancontroller;
 use App\Http\Controllers\penggajiancontroller;
 use App\Http\Controllers\karyawancontroller;
 use App\Http\Controllers\presensicontroller;
+use App\Http\Controllers\LoginController;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('Login.Login-aplikasi');
+});
 
-Route::get('/dashboard', [dashboardcontroller::class, 'dashboard']);
+//login
+Route::get('/login', [LoginController::class, 'halamanlogin'])->name('login');
+Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-//jabatan
-// Route::resource('jabatan', jabatancontroller::class);
-Route::get('/jabatan', [jabatancontroller::class, 'index']);
-Route::get('/createjabatan', [jabatancontroller::class, 'create']);
-Route::post('/jabatan', [jabatancontroller::class, 'store']);
+Route::group(['middleware' => ['auth','ceklevel:admin,karyawan']], function () {
+    route::get('/dashboard', [dashboardcontroller::class,'dashboard'])->name('dashboard');
+});
 
-//karyawan
-Route::get('/karyawan', [karyawancontroller::class, 'index']);
-Route::get('/createkaryawan', [karyawancontroller::class, 'create']);
+// //jabatan
+// // Route::resource('jabatan', jabatancontroller::class);
+// Route::get('/jabatan', [jabatancontroller::class, 'index']);
+// Route::get('/createjabatan', [jabatancontroller::class, 'create']);
+// Route::post('/jabatan', [jabatancontroller::class, 'store']);
 
-//penggajian
-Route::get('/penggajian', [penggajiancontroller::class, 'penggajian']);
+// //karyawan
+// Route::get('/karyawan', [karyawancontroller::class, 'index']);
+// Route::get('/createkaryawan', [karyawancontroller::class, 'create']);
 
-//presensi
-Route::get('/presensi', [presensicontroller::class, 'presensi']);
-Route::get('/perizinan', [presensicontroller::class, 'perizinan']);
+// //penggajian
+// Route::get('/penggajian', [penggajiancontroller::class, 'penggajian']);
+
+// //presensi
+// Route::get('/presensi', [presensicontroller::class, 'presensi']);
+// Route::get('/perizinan', [presensicontroller::class, 'perizinan']);
+
