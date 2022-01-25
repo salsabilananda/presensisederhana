@@ -14,8 +14,8 @@
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Presensi Karyawan</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="{{url('/karyawan')}}">Presensi Masuk</a></li>
-                  <li><a class="nav-link" href="index.html">Presensi Keluar</a></li>
+                  <li><a class="nav-link" href="{{url('/presensi-masuk')}}">Presensi Masuk</a></li>
+                  <li><a class="nav-link" href="{{url('/presensi-keluar')}}">Presensi Keluar</a></li>
                 </ul>
               </li>
               @endif

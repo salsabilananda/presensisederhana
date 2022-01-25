@@ -22,6 +22,10 @@ Route::group(['middleware' => ['auth','ceklevel:admin,karyawan']], function () {
     route::get('/dashboard', [dashboardcontroller::class,'dashboard'])->name('dashboard');
 });
 
+Route::group(['middleware' => ['auth','ceklevel:admin,karyawan']], function () {
+    route::post('/simpan-masuk', [presensicontroller::class,'store'])->name('simpan-masuk');
+    route::get('/presensi-masuk', [presensicontroller::class,'index'])->name('presensi-masuk');
+});
 // //jabatan
 // // Route::resource('jabatan', jabatancontroller::class);
 // Route::get('/jabatan', [jabatancontroller::class, 'index']);
