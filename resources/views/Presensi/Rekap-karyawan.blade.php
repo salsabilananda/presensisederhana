@@ -1,7 +1,5 @@
 @extends('layouts.main')
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
     <body class="hold-transition sidebar-mini">
           <section class="section">
               <div class="section-header">
@@ -41,7 +39,7 @@
                                     </tr>
                                     @foreach ($presensi as $item)
                                     <tr>
-                                        <td>{{ $item->user->name }}</td>
+                                        <td>{{ $item->user->nama_karyawan }}</td>
                                         <td>{{ $item->tgl }}</td>
                                         <td>{{ $item->jammasuk }}</td>
                                         <td>{{ $item->jamkeluar }}</td>
@@ -56,8 +54,4 @@
                 </div>
             </div>      
         </div>
-    </body>
-</html> 
 @endsection
-
-  

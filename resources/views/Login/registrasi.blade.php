@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
             <div class="login-brand">
-              <img src="assets/img/stisla-fill.svg" alt="logo" width="100" class="shadow-light rounded-circle">
+              <img src="{{ asset('assets/img/rajawali.png') }}" alt="logo" width="170" class="shadow-light">
             </div>
 
             <div class="card card-primary">
@@ -17,8 +17,22 @@
                 
                 <div class="row">
                     <div class="form-group col-12">
-                      <label for="username">Username</label>
-                      <input id="username" type="text" class="form-control" name="username" autofocus>
+                      <label for="nama_karyawan">Nama Karyawan</label>
+                      <input id="nama_karyawan" type="text" class="form-control" name="nama_karyawan" autofocus>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="jabatan">Jabatan</label>
+                    <input id="jabatan" type="text" class="form-control" name="jabatan">
+                    <div class="invalid-feedback">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="no_telp">No Telp</label>
+                    <input id="no_telp" type="text" class="form-control" name="no_telp">
+                    <div class="invalid-feedback">
                     </div>
                   </div>
 

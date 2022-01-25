@@ -63,7 +63,7 @@
           <div class="section-body">
             <div class="card">
               
-               <div class="content">
+               <div class="content"><br>
                 <div class="row justify-content-center">
                     <div class="card card-info card-outline">
                         <div class="card-header">Presensi Masuk</div>
@@ -82,7 +82,7 @@
                                 </div>
                                 <center>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary">Klik Untuk Presensi Masuk</button>
+                                        <button type="submit" class="btn btn-primary">Klik Disini untuk Presensi Masuk</button>
                                     </div>
                                 </center>
                             </form>

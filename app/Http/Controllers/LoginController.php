@@ -31,8 +31,10 @@ class LoginController extends Controller
     public function simpanregistrasi(Request $request) {
         // dd($request->all());
         User::create([
-            'name' => $request->username,
+            'nama_karyawan' => $request->nama_karyawan,
             'level' => 'karyawan',
+            'jabatan' => $request->jabatan,
+            'no_telp' => $request->no_telp,
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60),
