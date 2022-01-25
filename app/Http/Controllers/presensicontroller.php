@@ -21,7 +21,7 @@ class presensicontroller extends Controller
 
     public function keluar()
     {
-        return view('Presensi.Keluar');
+        return view('Presensi.keluar');
     }
 
     /**
@@ -60,8 +60,6 @@ class presensicontroller extends Controller
                 'jammasuk' => $localtime,
             ]);
         }
-         
-
         return redirect('presensi-masuk');
     }
 
@@ -103,7 +101,7 @@ class presensicontroller extends Controller
         if ($presensi->jamkeluar == ""){
             $presensi->update($dt);
             return redirect('presensi-keluar');
-        }else{
+        } else{
             dd("sudah ada");
         }
     }

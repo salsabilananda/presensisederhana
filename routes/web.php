@@ -11,6 +11,8 @@ Route::get('/', function () {
     return view('Login.Login-aplikasi');
 });
 
+Route::get('/dashboard', [dashboardcontroller::class, 'dashboard']);
+
 //login
 Route::get('/registrasi', [LoginController::class, 'registrasi'])->name('registrasi');
 Route::post('/simpanregistrasi', [LoginController::class, 'simpanregistrasi'])->name('simpanregistrasi');
@@ -25,7 +27,12 @@ Route::group(['middleware' => ['auth','ceklevel:admin,karyawan']], function () {
 Route::group(['middleware' => ['auth','ceklevel:admin,karyawan']], function () {
     route::post('/simpan-masuk', [presensicontroller::class,'store'])->name('simpan-masuk');
     route::get('/presensi-masuk', [presensicontroller::class,'index'])->name('presensi-masuk');
+    route::get('/presensi-keluar', [presensicontroller::class,'keluar'])->name('presensi-keluar');
+    route::post('/ubah-presensi', [presensicontroller::class,'presensipulang'])->name('ubah-presensi');
+    route::get('/filter-data', [presensicontroller::class,'halamanrekap'])->name('filter-data');
+    route::get('/filter-data/{tglawal}/{tglakhir}', [presensicontroller::class,'tampildatakeseluruhan'])->name('filter-data-keseluruhan');
 });
+
 // //jabatan
 // // Route::resource('jabatan', jabatancontroller::class);
 // Route::get('/jabatan', [jabatancontroller::class, 'index']);
