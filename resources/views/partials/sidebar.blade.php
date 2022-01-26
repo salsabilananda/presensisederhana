@@ -13,7 +13,6 @@
                 <a href="{{url('/dashboard')}}" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a>
               </li>
 
-              @if (auth()->user()->level == "karyawan")
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-check"></i><span>Presensi Karyawan</span></a>
                 <ul class="dropdown-menu">
@@ -21,7 +20,6 @@
                   <li><a class="nav-link" href="{{url('/presensi-keluar')}}">Presensi Keluar</a></li>
                 </ul>
               </li>
-              @endif
 
               @if (auth()->user()->level == "admin")
               <li class="nav-item">
@@ -35,11 +33,11 @@
               </li>
               @endif
 
-              <!-- @if (auth()->user()->level == "admin")
+              @if (auth()->user()->level == "admin")
               <li class="nav-item">
                 <a href="{{url('/jabatan')}}" class="nav-link"><i class="fas fa-columns"></i><span>Data Jabatan</span></a>
               </li>
-              @endif -->
+              @endif
 
             </ul>
 

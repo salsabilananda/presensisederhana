@@ -35,13 +35,13 @@ Route::group(['middleware' => ['auth','ceklevel:admin,karyawan']], function () {
 
 // //jabatan
 // // Route::resource('jabatan', jabatancontroller::class);
-// Route::get('/jabatan', [jabatancontroller::class, 'index']);
+Route::get('/jabatan', [jabatancontroller::class, 'index']);
 // Route::get('/createjabatan', [jabatancontroller::class, 'create']);
 // Route::post('/jabatan', [jabatancontroller::class, 'store']);
 
 //karyawan
 Route::get('/karyawan', [karyawancontroller::class, 'index']);
-Route::get('/createkaryawan', [karyawancontroller::class, 'create']);
+// Route::get('/createkaryawan', [karyawancontroller::class, 'create']);
 
 // //penggajian
 // Route::get('/penggajian', [penggajiancontroller::class, 'penggajian']);

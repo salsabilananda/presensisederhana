@@ -22,11 +22,10 @@
                             <th scope="col">No.</th>
                             <th scope="col">Id</th>
                             <th scope="col">Nama Karyawan</th>
-                            <th scope="col">Level</th>
                             <th scope="col">Email</th>
                             <th scope="col">Jabatan</th>
                             <th scope="col">No. Telp</th>
-                            <th scope="col">Opsi</th>
+                            <!-- <th scope="col">Opsi</th> -->
                           </tr>
                         </thead>
                         <tbody>
@@ -35,18 +34,17 @@
                           <th scope="row">{{ $loop->iteration }}</th>
                           <td>{{ $data -> id }}</td>
                           <td>{{ $data -> nama_karyawan }}</td>
-                          <td>{{ $data -> level }}</td>
                           <td>{{ $data -> email }}</td>
                           <td>{{ $data -> jabatan }}</td>
                           <td>{{ $data -> no_telp }}</td>
-                          <td>
+                          <!-- <td>
                           <a href="/karyawan/{{ $data->id }}/edit" class="btn btn-primary">Edit</a>
                           <form action="/karyawan" method="post" class="inline">
                           @method('delete')
                           @csrf
                           <button type="submit" class="btn btn-danger">Delete</button>
                           </form>
-                          </td>
+                          </td> -->
                         </tr>
                          @endforeach
                       </tbody>

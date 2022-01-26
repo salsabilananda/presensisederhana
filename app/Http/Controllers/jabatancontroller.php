@@ -9,31 +9,31 @@ use Illuminate\Support\Str;
 
 class jabatancontroller extends Controller
 {
-   public function index()
-    {
-        $jabatan = jabatan::latest()->get();
-        return view('jabatan.jabatan', compact('jabatan'));
+
+    public function index() {
+        $jabatan = jabatan::All();
+        return view('jabatan.jabatan', ['jabatan' => $jabatan]);
     }
 
-    public function create()
-    {
-        $data = array(
-            'menu' => 'jabatan',
-            'submenu' => 'jabatan'
-        ); 
-        return view ('jabatan.create', $data);
-    }
+    // public function create()
+    // {
+    //     $data = array(
+    //         'menu' => 'jabatan',
+    //         'submenu' => 'jabatan'
+    //     ); 
+    //     return view ('jabatan.create', $data);
+    // }
 
-    public function store(Request $request)
-    {
-        $this->validate($request, [
-            'id' => 'required',
-            'nama_jabatan' => 'required',
-            'gaji_pokok' => 'required'
-        ]);
+    // public function store(Request $request)
+    // {
+    //     $this->validate($request, [
+    //         'id' => 'required',
+    //         'nama_jabatan' => 'required',
+    //         'gaji_pokok' => 'required'
+    //     ]);
 
-        jabatan::create($request->all());   
+    //     jabatan::create($request->all());   
 
-        return redirect()->route('jabatan.jabatan')->with('succes','Data Berhasil di Input');
-    }
+    //     return redirect()->route('jabatan.jabatan')->with('succes','Data Berhasil di Input');
+    // }
 }

@@ -5,7 +5,7 @@
             <h1>Jabatan</h1>
           </div>
 <body>
-  <a href="/createjabatan" class="btn btn-primary my-3">Tambah Data</a>
+  <!-- <a href="/createjabatan" class="btn btn-primary my-3">Tambah Data</a> -->
   <div id="app">
       <div class="main-wrapper"> 
             <div class="row">
@@ -26,7 +26,7 @@
                           <th scope="col">Id</th>
                           <th scope="col">Nama Jabatan</th>
                           <th scope="col">Gaji Pokok</th>
-                          <th scope="col">Opsi</th>
+                          <!-- <th scope="col">Opsi</th> -->
                         </tr>
                       </thead>
                       <tbody>
@@ -36,9 +36,9 @@
                           <td>{{ $data -> id }}</td>
                           <td>{{ $data -> nama_jabatan }}</td>
                           <td>{{ $data -> gaji_pokok }}</td>
-                          <td>
+                          <!-- <td>
                         
-                          </td>
+                          </td> -->
                         </tr>
                          @endforeach
                       </tbody>
